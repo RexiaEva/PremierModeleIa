@@ -12,7 +12,12 @@ regSimple = pandas.read_csv('reg_simple.csv')
 
 # Visualisation des données
 print(regSimple)
+x = regSimple['heure_rev']
+y = regSimple['note']
+plt.scatter(regSimple['heure_rev'], regSimple['note'])
 
+X = np.hstack(x, np.ones(x.shape))
+X.shape
 # def model(X, theta):
 #     return X.dot(theta)
 
