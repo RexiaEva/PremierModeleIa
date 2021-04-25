@@ -14,7 +14,7 @@ regSimple = pandas.read_csv('reg_simple.csv')
 print(regSimple)
 
 
-# np.random.seed(0)
+# np.random.seed(0) 1210M&t@le
 
 # n_samples = 27
 # x = np.linspace(0, 100, n_samples).reshape(n_samples, 1)
