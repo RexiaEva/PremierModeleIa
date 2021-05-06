@@ -9,6 +9,7 @@ from scipy import stats
 regSimple = pd.read_csv('reg_simple.csv')
 
 # Visualisation des données
+print(regSimple)
 #selection de la première colonne de notre dataset (la taille de la population)
 X = regSimple.iloc[0:len(regSimple),0]
 #selection de deuxième colonnes de notre dataset (le profit effectué)
@@ -17,6 +18,7 @@ axes = plt.axes()
 axes.grid() # dessiner une grille pour une meilleur lisibilité du graphe
 plt.scatter(X,Y) # X et Y sont les variables qu'on a extraite dans le paragraphe précédent
 plt.show()
+
 
 # Création du modèle (model(X,theta))
 #linregress() renvoie plusieurs variables de retour. On s'interessera 
