@@ -23,15 +23,24 @@ plt.scatter(X,Y) # X et Y sont les variables qu'on a extraite dans le paragraphe
 
 
 # Création du modèle (model(X,theta))
-theta = (random.randint(100), random.randint(100))
+theta = (random.randint(0, 100), random.randint(0,100))
 modele = X.apply(lambda x: theta[0] * x + theta[1])
+plt.plot(X, modele, c='r')
 
 
 
 
-#la variable fitLine sera un tableau de valeurs prédites depuis la tableau de variables X
-fitLine = predict(X)
-plt.plot(X, fitLine, c='r')
+# fonction coût
+M = len(regSimple)
+Sigma = 0
+for i in range(1, M):
+   Sigma += (modele.iat[i, 0] - Y.iat[i, 0])**2
+J = (1/2*M)*Sigma
+
+
+
+
+# Gradient
 
 
 plt.show()
