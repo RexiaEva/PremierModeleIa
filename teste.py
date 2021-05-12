@@ -1,4 +1,5 @@
 import pandas as pd
+import random
 import matplotlib.pyplot as plt
 from scipy import stats
 
@@ -17,18 +18,20 @@ Y = regSimple.iloc[0:len(regSimple),1]
 axes = plt.axes()
 axes.grid() # dessiner une grille pour une meilleur lisibilité du graphe
 plt.scatter(X,Y) # X et Y sont les variables qu'on a extraite dans le paragraphe précédent
-plt.show()
+
+
 
 
 # Création du modèle (model(X,theta))
-#linregress() renvoie plusieurs variables de retour. On s'interessera 
-# particulierement au slope et intercept
-slope, intercept, r_value, p_value, std_err = stats.linregress(X, Y)
+theta = (random.randint(100), random.randint(100))
+modele = X.apply(lambda x: theta[0] * x + theta[1])
 
-def predict(x):
-   return slope * x + intercept
+
+
 
 #la variable fitLine sera un tableau de valeurs prédites depuis la tableau de variables X
 fitLine = predict(X)
 plt.plot(X, fitLine, c='r')
+
+
 plt.show()
